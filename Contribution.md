@@ -8,20 +8,20 @@
   
 -  Fork this [repository](https://github.com/subhayu99/PyScripts)
   
--  Clone the forked [repo](https://github.com/<Your_Username>/PyScripts)
-    git clone https://github.com/subhayu99/PyScripts
+-  Clone the forked https://github.com/<Your_Username>/PyScripts
+    > git clone https://github.com/<Your_Username>/PyScripts
 
 -  Create new branch 
-    git checkout -b <Your-Branch-Name>```
+    > git checkout -b <Your_Branch_Name>
 
 -  Add Scripts related to your respective issues.
-    git add <your-contribution>```
+    > git add <Your_Contribution>
  
 -  Add a commit message !
-    git commit -a -m "<Added your message>
+    > git commit -a -m "<Your_Message>
     
 -  Push changes
-    git push -u origin <name_of_your_branch>
+    > git push -u origin <Name_Of_Your_Branch>
  
 -  Create pull requests
 [Try to Mention the related issue for your PR]
