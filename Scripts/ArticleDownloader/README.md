@@ -8,7 +8,7 @@ The Beautiful Soup library in Python enables web scraping and enables parsing th
 
 ## Implementation ##
 
-- The user is prompted to enter the URL of the article that he/she wants to be download
+- The user is prompted to enter the URL of the article that he/she wants to download
 
 - The contents are then stored in a file named ArticleContent.txt
 
