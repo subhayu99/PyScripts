@@ -1,6 +1,6 @@
 # Article Downloader #
 
-Through this script, the contents of a medium article can be downloaded and stored
+Through this script, the contents of a website article can be downloaded and stored
 
 The script is written in Python
 
@@ -8,7 +8,7 @@ The Beautiful Soup library in Python enables web scraping and enables parsing th
 
 ## Implementation ##
 
-- The user is prompted to enter the URL of the Medium article that has to be downloaded
+- The user is prompted to enter the URL of the article that he/she wants to be download
 
 - The contents are then stored in a file named ArticleContent.txt
 
