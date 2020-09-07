@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Aug 17 14:24:23 2020
-
-@author: Gulshan
-"""
 # Function rock_paper_scissor--->
 def rock_paper_scissor(num1,num2,bit1,bit2):
     play_pos1=int(num1[bit1])%3  #Play Position For Player 1
