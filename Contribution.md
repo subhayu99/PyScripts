@@ -24,5 +24,6 @@
     > git push -u origin <Name_Of_Your_Branch>
  
 -  Create pull requests
-[Try to Mention the related issue for your PR]
+[Try to Mention the related issue for your PR] 
+<br/>
 // After Contributing add your name and GitHub handle at Contributors.md
