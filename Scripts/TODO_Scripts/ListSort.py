@@ -1,4 +1,5 @@
 arr = [12, 820, 73, 23, 41, 0, -1, 0000.001, 1100.00, 101.001, 20, 560]
+print("Unsorted Array: ",arr)
 
 def selection_sort(array):
     for i in range(0,len(array)):
@@ -9,7 +10,7 @@ def selection_sort(array):
 
         array[i], array[minval] = array[minval], array[i] #swapping values to sort
 
-    print (array)
+    print ("After sorting: ", array)
 
 selection_sort(arr)
 
