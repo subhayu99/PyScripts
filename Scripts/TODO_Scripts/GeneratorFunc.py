@@ -1,15 +1,13 @@
-# A Python generator is a function which returns a generator iterator (just an object we can iterate over) by calling yield
-
-def simpleGenerator(numbers):
-    i = 0
-    while True:
+from random import choice
+def yield_number(arr):
+    check='y'
+    while (check!='N' or check!='n'):
         check = input('Wanna generate a number? (If yes, press y else n): ')
-        if check in ('Y', 'y') and len(numbers) > i:
-            yield numbers[i]                 # TODO: Create a function of your own that does the same work as the "yield" function. You can use any other inbuilt function except the "yield" function.
-            i += 1
+        if (check=='Y' or check=='y'):
+            print(choice(arr))
         else:
-            print('Bye!')
-            break
+            print("Bye")
+            break;
 
-for number in simpleGenerator([10, 11, 12, 14]):
-    print(number)
+arr=[10, 11, 12, 14]
+yield_number(arr)
