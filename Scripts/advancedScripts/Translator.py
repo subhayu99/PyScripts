@@ -1,175 +1,81 @@
-from googletrans import Translator 
+#-------Importing Libraries-----------------------------------------------------
+from tkinter import *
+import tkinter as tk
+from tkinter import ttk
+from googletrans import Translator #pip3 install googletrans
+from tkinter import messagebox
+#--------------------------------------------------------------------------------
 
-def Translate(text,language_text,language_to):
-    translator = Translator()
-    try:
-        return translator.translate(text=text,dest=language_to,src=language_text)
-    except:
-        return("can't do translate please check your connection internet or  language input invalid ")
+#---------------------Window Config----------------------------------------------
+root = tk.Tk()                          
+root.title('Langauge Translator')
+root.geometry('550x400')
+root.maxsize(550,400)
+root.minsize(550,400)
+#---------------------------------------------------------------------------------
 
-def Select_Language(text):
-    print('''Selcet a Language :
-                    Example :
-                        fa : persian
-                        en : english
-                        ja : japanese
-2 : See all language and select\n` ''')
-    option = input('Select  option 2 or Enter a Language : ')
-    
-    LANGUAGES = {
-        'af': 'afrikaans',
-        'sq': 'albanian',
-        'am': 'amharic',
-        'ar': 'arabic',
-        'hy': 'armenian',
-        'az': 'azerbaijani',
-        'eu': 'basque',
-        'be': 'belarusian',
-        'bn': 'bengali',
-        'bs': 'bosnian',
-        'bg': 'bulgarian',
-        'ca': 'catalan',
-        'ceb': 'cebuano',
-        'ny': 'chichewa',
-        'zh-cn': 'chinese (simplified)',
-        'zh-tw': 'chinese (traditional)',
-        'co': 'corsican',
-        'hr': 'croatian',
-        'cs': 'czech',
-        'da': 'danish',
-        'nl': 'dutch',
-        'en': 'english',
-        'eo': 'esperanto',
-        'et': 'estonian',
-        'tl': 'filipino',
-        'fi': 'finnish',
-        'fr': 'french',
-        'fy': 'frisian',
-        'gl': 'galician',
-        'ka': 'georgian',
-        'de': 'german',
-        'el': 'greek',
-        'gu': 'gujarati',
-        'ht': 'haitian creole',
-        'ha': 'hausa',
-        'haw': 'hawaiian',
-        'iw': 'hebrew',
-        'hi': 'hindi',
-        'hmn': 'hmong',
-        'hu': 'hungarian',
-        'is': 'icelandic',
-        'ig': 'igbo',
-        'id': 'indonesian',
-        'ga': 'irish',
-        'it': 'italian',
-        'ja': 'japanese',
-        'jw': 'javanese',
-        'kn': 'kannada',
-        'kk': 'kazakh',
-        'km': 'khmer',
-        'ko': 'korean',
-        'ku': 'kurdish (kurmanji)',
-        'ky': 'kyrgyz',
-        'lo': 'lao',
-        'la': 'latin',
-        'lv': 'latvian',
-        'lt': 'lithuanian',
-        'lb': 'luxembourgish',
-        'mk': 'macedonian',
-        'mg': 'malagasy',
-        'ms': 'malay',
-        'ml': 'malayalam',
-        'mt': 'maltese',
-        'mi': 'maori',
-        'mr': 'marathi',
-        'mn': 'mongolian',
-        'my': 'myanmar (burmese)',
-        'ne': 'nepali',
-        'no': 'norwegian',
-        'ps': 'pashto',
-        'fa': 'persian',
-        'pl': 'polish',
-        'pt': 'portuguese',
-        'pa': 'punjabi',
-        'ro': 'romanian',
-        'ru': 'russian',
-        'sm': 'samoan',
-        'gd': 'scots gaelic',
-        'sr': 'serbian',
-        'st': 'sesotho',
-        'sn': 'shona',
-        'sd': 'sindhi',
-        'si': 'sinhala',
-        'sk': 'slovak',
-        'sl': 'slovenian',
-        'so': 'somali',
-        'es': 'spanish',
-        'su': 'sundanese',
-        'sw': 'swahili',
-        'sv': 'swedish',
-        'tg': 'tajik',
-        'ta': 'tamil',
-        'te': 'telugu',
-        'th': 'thai',
-        'tr': 'turkish',
-        'uk': 'ukrainian',
-        'ur': 'urdu',
-        'uz': 'uzbek',
-        'vi': 'vietnamese',
-        'cy': 'welsh',
-        'xh': 'xhosa',
-        'yi': 'yiddish',
-        'yo': 'yoruba',
-        'zu': 'zulu',
-        'fil': 'Filipino',
-        'he': 'Hebrew'
-    } 
+def translate():                                                        #to_translate
+        language_1 = t1.get("1.0","end-1c")
+        cl = choose_langauge.get()
 
-    if option == '2':
-        count = 1
-        for i,L in LANGUAGES.items():
-            print('{} : {} : {}'.format(count,i,L))
-            count+=1
-        try:
-            language = input('Select a language :')
-            return LANGUAGES.get(language)
-        except:
-            return "can't find the language"
-    elif option == '':
-        try:
-            tran = Translator()
-            return tran.detect(text).lang
-        except:
-            print("can't do translate please check your connection internet or  language input invalid ")
+        if language_1 == '':
+                messagebox.showerror('Language Translator','please fill the box')
+        else:
+                translator = Translator()
+                output = translator.translate(language_1, dest=cl)
+                t2.insert('end',output.text)
 
-    else:
-        try:
-            return LANGUAGES.get(option)
-        except:
-            return "can't find the language"
+def clear():                                                            #to clear the area
+        t1.delete(1.0,'end')
+        t2.delete(1.0,'end')
+        
 
-def main():
-    help = ''' 
-Welcome to this script 
-    this script can translate any language to any language
-    support of 106 language 
-    for translate a text you shold selsect option 2 and select language text and select the language you want to translate
-    but if you don't choose the language of the text, it will automatically\n
-      '''
-    print('1: Help \n2: Translate ')
-    option =int( input('Select an option : '))
-    if option == 1:
-        print(help)
-        main()
-    if option == 2:
-        text = input('Enter your Text : ')
-        print("\nchoose language text \n if you don't choose do it will automatically")
-        src =  Select_Language(text)
-        print('\nSelect the language you want to translate :')
-        dest = Select_Language(text)
-        try:
-            print(str(Translate(text,src,dest).text))
-        except:
-            print("can't do translate please check your connection internet or  language input invalid ")
+#------------------------- Design and Functions --------------------------------------------
 
-main()
+a = tk.StringVar() 
+auto_detect = ttk.Combobox(root, width = 20, textvariable = a, state='readonly',font=('verdana',10,'bold'),) 
+  
+
+
+auto_detect['values'] = ('Auto Detect',) 
+  
+auto_detect.place(x=30,y=70)
+auto_detect.current(0) 
+
+
+l = tk.StringVar() 
+choose_langauge = ttk.Combobox(root, width = 20, textvariable = l, state='readonly',font=('verdana',10,'bold')) 
+  
+
+#list of languages
+choose_langauge['values'] = ('Afrikaans','Albanian','Arabic','Armenian','Azerbaijani','Basque','Belarusian','Bengali','Bosnian',
+                        'Bulgarian','Catalan','Cebuano','Chichewa','Chinese','Corsican','Croatian','Czech','Danish','Dutch',
+                        'English','Esperanto','Estonian','Filipino','Finnish','French','Frisian','Galician','Georgian','German',
+                        'Greek','Gujarati','Haitian Creole','Hausa','Hawaiian','Hebrew','Hindi','Hmong','Hungarian','Icelandic',
+                        'Igbo','Indonesian','Irish','Italian','Japanese','Javanese','Kannada','Kazakh','Khmer','Kinyarwanda','Korean',
+                        'Kurdish','Kyrgyz','Lao','Latin','Latvian','Lithuanian','Luxembourgish','Macedonian','Malagasy','Malay','Malayalam',
+                        'Maltese','Maori','Marathi','Mongolian','Myanmar','Nepali','Norwegian','Odia','Pashto','Persian','Polish','Portuguese',
+                        'Punjabi','Romanian','Russian','Samoan','Scots Gaelic','Serbian','Sesotho','Shona','Sindhi','Sinhala','Slovak',
+                        'Slovenian','Somali','Spanish','Sundanese','Swahili','Swedish','Tajik','Tamil','Tatar','Telugu','Thai','Turkish',
+                        'Turkmen','Ukrainian','Urdu','Uyghur','Uzbek','Vietnamese','Welsh','Xhosa','Yiddish','Yoruba','Zulu',) 
+  
+choose_langauge.place(x=290,y=70)
+choose_langauge.current(0) 
+
+
+t1 = Text(root,width=30,height=10,borderwidth=5,relief=RIDGE)
+t1.place(x=10,y=100)
+
+t2 = Text(root,width=30,height=10,borderwidth=5,relief=RIDGE)
+t2.place(x=260,y=100)
+
+
+button = Button(root,text="Translate",relief=RIDGE,borderwidth=3,font=('verdana',10,'bold'),cursor="hand2",command=translate)
+button.place(x=150,y=280)
+
+
+clear = Button(root,text="Clear",relief=RIDGE,borderwidth=3,font=('verdana',10,'bold'),cursor="hand2",command=clear)
+clear.place(x=280,y=280)
+
+root.mainloop()
+#----------------------------------------------------------------------------------------------------------------------------------------------
