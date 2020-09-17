@@ -1,5 +1,7 @@
 def des(n):
-    if n==0 or n==1:
+       if (n>1):
+         des(n//2)
+    print(n%2,end=" ")
         print(n, end=" ")
         return
     des(int(n/2))
