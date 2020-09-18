@@ -2,9 +2,8 @@
 arr=[1,2,3,4,5]
 
 max=arr[0]
-n=len(arr)
 
-for i in range(n):
+for i in range(0,len(arr)):
     if arr[i]>max: 
        max=arr[i]
 
