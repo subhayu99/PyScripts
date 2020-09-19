@@ -19,4 +19,9 @@ pip install -r requirements.txt
 
 <img src="Sample.PNG" alt="Sample">
 
+<br/>
+
+#### An Example of the Google Map in action:
+<img src="Map Screenshot.png" alt="Map Sample">
+
 

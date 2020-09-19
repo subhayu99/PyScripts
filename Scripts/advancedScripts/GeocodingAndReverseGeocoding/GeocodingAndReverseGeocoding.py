@@ -1,5 +1,6 @@
 import requests
 import sys
+from webbrowser import open #To open a web browser
 
 # If you want your own private_token please refer the README file for this script.
 private_token = "<Your Private Token>"
@@ -15,7 +16,8 @@ while True:
         url = "https://us1.locationiq.com/v1/search.php"
 
         address = input("Input the address: ")
-
+        open("http://www.google.com/maps/place/"+address)#Will open Google maps URL
+        
         # Parameters for the geocoding url
         data = {
             'key': private_token,
@@ -43,6 +45,8 @@ while True:
 
         latitude_reverse = input("Enter the latitude: ")
         longitude_reverse = input("Enter the longitude: ")
+        open("http://www.google.com/maps/place/@"+latitude_reverse+','+longitude_reverse)
+        #Will open Google Map using the given Latitude and Longitude
 
         # Parameters for the reverse geocoding url
         data = {
