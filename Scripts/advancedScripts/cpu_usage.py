@@ -1,7 +1,7 @@
 #This script will check cpu usage in percentage
 
-'''when calling the file name for running the script
-    there are there are 3 ways you run this script
+'''when calling the file name for running the script, there are there are 3 ways you run this script
+
     1st: By calling just the script name after the "Python" this runs the
          script and time for wait will be 1s and optimal percent 75%
          Python cpu_usage.py
