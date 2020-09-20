@@ -1,8 +1,9 @@
 import psutil
+import sys
 
 # this function takes one or 2 arguments first is time of cpu check in seconds and second optimal percentage of cup usage
 #by default optimal percent is at 75 percent but can be changed by using command line argument
-def cpu_usage_check(time ,optimal_percent=75):
+def cpu_usage_check(time=1 ,optimal_percent=75):
     cpu_percent = psutil.cpu_percent(time)
     print("The average CPU Usage of {}s is at {}%".format(time , cpu_percent))
     if cpu_percent < optimal_percent:
@@ -10,4 +11,9 @@ def cpu_usage_check(time ,optimal_percent=75):
     else:
         print("CPU Usage is too high than optimal percentage")
 
-cpu_usage_check(5)
+if len(sys.argv) == 1:
+    cpu_usage_check()
+elif len(sys.argv) == 2:
+    cpu_usage_check(int(sys.argv[1]))
+elif len(sys.argv) == 3:
+    cpu_usage_check(int(sys.argv[1]) ,int(sys.argv[2]))
