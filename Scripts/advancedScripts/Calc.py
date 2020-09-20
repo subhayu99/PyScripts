@@ -1,155 +1,152 @@
-operation = input('''
-Please type in the math operation you would like to complete:
-1 for addition
-2 for subtraction
-3 for multiplication
-4 for division
-''')
+import tkinter as tk
+from tkinter import *
+root = tk.Tk()
+root.geometry("300x230")
+root.title("Calculator")
+root.maxsize(250,230)
+root.minsize(250,230)
 
-num = int(input('Enter your first number: '))
-num2 = int(input('Enter your second number: '))
-
-if operation == '1':
-    print('{} + {} = '.format(num, num2))
-    print(num+num2)
-
-elif operation == '2':
-    print('{} - {} = '.format(num, num2))
-    print(num-num2)
-
-elif operation == '3':
-    print('{} * {} = '.format(num, num2))
-    print(num*num2)
-
-elif operation == '4':
-    print('{} / {} = '.format(num, num2))
-    print(num / num2)
-
-else:
-    print('Wrong Input! Please Try Again')
-=======
+#Entry Widgets to show calculations
+inp = Entry(root,width=16,borderwidth=3,relief=RIDGE)
+inp.grid(pady=10,row=0,sticky="w",padx=15)
 
 
-"""The previous script becomes very boring for the user as he has to keep on typing just numbers and of wants to interact using 
-simple english language he is unable to do so. Also the program terminates after one execution and if the user wants to keep on 
-performing operations it becomes difficult.
-I have tried making a more simple and interactive calculator which allows the user to input any statement for performing the tasks. """
+# <====================  Button Operation code starts here.. ==============>
+def nine():
+        inp.insert("end","9")
+
+def eight():
+        inp.insert("end","8")
+
+def seven():
+        inp.insert("end","7")
+
+def six():
+        inp.insert("end","6")
+
+def five():
+        inp.insert("end","5")
+
+def four():
+        inp.insert("end","4")
+
+def three():
+        inp.insert("end","3")
+
+def two():
+        inp.insert("end","2")
+
+def one():
+        inp.insert("end","1")
+
+def zero():
+        inp.insert("end","0")
+
+def double_zero():
+        inp.insert("end","00")
+
+def dot():
+        inp.insert("end",".")
+
+def plus():
+        inp.insert("end","+")
+
+def minus():
+        inp.insert("end","-")
+
+def mul():
+        inp.insert("end","*")
+
+def divide():
+        inp.insert("end","/")
+
+def modulus():
+        inp.insert("end","%")
+
+def result():
 
 
-
-
-def Calculator(num_1,num_2):
-    #Executing the loop infinite times as we donot know how many times the user will want to run
-    while(True):
-        choice= input("Enter what you want to perform: ")
-        print()
-
-        #For Addition user can type any Sentence containing word related to it and will get the output but here we are checking only for the common words
-        if ("addition" in choice) or ("add" in choice) or ("sum" in choice) or ("plus" in choice):
-            sum = (num_1) + (num_2)
-            print("Output....")
-            print("Adding {} and {} results to {}".format(num_1,num_2,sum))
-            print()
-        
-        #For Subtraction user can type any Sentence containing word related to it and will get the output but here we are checking only for the common words
-        elif ("subtraction" in choice) or ("minus" in choice) or ("difference" in choice) or ("subtract" in choice):
-            if( num_1 > num_2 ):
-                diff = (num_1) - (num_2)
-                print("Output....")
-                print("Subtracting {} from {} results to {}".format(num_2,num_1,diff))
-                print()
-            elif( num_2 > num_1 ):
-                diff = (num_2) - (num_1)
-                print("Output....")
-                print("Subtracting {} from {} results to {}".format(num_1,num_2,diff)) 
-                print()   
-        
-        #For Multiplication user can type any Sentence cpntaining word related to it and will get the output but here we are checking only for the common words
-        elif ("multiplication" in choice) or ("product" in choice) or ("multiply" in choice):
-            if(num_1==0 or num_2==0):
-                print("Output....")
-                print("Multiplying {} and {} results to 0".format(num_1,num_2))
-                print()
-            elif(num_1==1):
-                print("Output....")
-                print("Multiplying {} and {} results to {}".format(num_1,num_2,num_2))
-                print()
-            elif(num_2==1):
-                print("Output....")
-                print("Multiplying {} and {} results to {}".format(num_1,num_2,num_1))
-                print()
-            else:
-                mul = (num_1) * (num_2)
-                print("Output....")
-                print("Multiplying {} and {} results to {}".format(num_1,num_2,mul))
-                print()
-
-        #For Division user can type any Sentence cpntaining word related to it and will get the output but here we are checking only for the common words
-        elif("division" in choice) or ("divide" in choice) or ("quotient" in choice):
-            if( num_1 > num_2 ):
-                if(num_2==0):
-                    print("Output....")
-                    print("Error: Please try with some other values!")
-                
-                elif(num_1==0):
-                    print("Output....")
-                    print("Dividing {} from {} results to 0".format(num_1,num_2))
-                    print()
-                else:
-                    div = (num_1) / (num_2)
-                    print("Output....")
-                    print("Dividing {} from {} results to {}".format(num_1,num_2,div))
-                    print()
-            elif(num_1==0 and num_2==0):
-                print("Infinity!")
-                print()
-            elif( num_2 > num_1 ):
-                if(num_1==0):
-                    print("Output....")
-                    print("Error: Please try with some other values!")
-                    print()
-                
-                elif(num_2==0):
-                    print("Output....")
-                    print("Dividing {} from {} results to 0".format(num_1,num_2))
-                    print()
-                else:
-                    div = (num_2) / (num_1)
-                    print("Output....")
-                    print("Dividing {} from {} results to {}".format(num_2,num_1,div))
-                    print()
-        
-        #For exiting the loop user can type any Sentence containing word related to it and it will exit from the loop but here we are checking for the common words
-        elif ("exit" in choice) or ("stop" in choice) or ("return" in choice):
-            break 
-        
+        if inp.get() == "":
+                inp.insert("end","error")
+        elif inp.get()[0] == "0":
+                inp.delete(0,"end")
+                inp.insert("end","error")
         else:
-            print()
-            print("Operation not found: Please try again!")
-            print()
+                res = inp.get()
+                res = eval(res)
+                inp.insert("end"," = ")
+                inp.insert("end",res)
+
+def clear():
+        inp.delete(0,"end")
+
+
+# <============ end code ================>
 
 
 
-def main():
+# <============= Button Design Code starts here.. ==================>
 
-    print()
-    print("         THIS IS A BASIC USER FRIENDLY CALCULATOR!          ")
-    print()
-    print("You can type a sentence and interact.")
-    print()
-    #inputting two numbers at a time using the split function
-    num_1,num_2 = input("Enter two numbers: ").split()
-    num1=float(num_1)
-    num2=float(num_2)
+clear = Button(root,text="C",width=2,command=clear,bg="red",fg="white",relief=RIDGE)
+clear.grid(row=0,sticky="w",padx=125)
 
 
-    #printing both the numbers
-    print("Number 1 is: ",num_1)
-    print("Number 2 is: ",num_2)
-    print()
+nine = Button(text="9",width=2,command=nine,borderwidth=3,relief=RIDGE)
+nine.grid(row=1,sticky="w",padx=15)
 
-    Calculator(num_1,num_2)
+eight = Button(text="8",width=2,command=eight,borderwidth=3,relief=RIDGE)
+eight.grid(row=1,sticky="w",padx=45)
+
+seven = Button(root,text="7",width=2,command=seven,borderwidth=3,relief=RIDGE)
+seven.grid(row=1,sticky="w",padx=75)
+
+plus = Button(root,text="+",width=2,command=plus,borderwidth=3,relief=RIDGE)
+plus.grid(row=1,sticky="e",padx=125)
 
 
-if __name__ == "__main__":
-    main()
+six = Button(text="6",width=2,command=six,borderwidth=3,relief=RIDGE)
+six.grid(row=2,sticky="w",padx=15,pady=5)
+
+five = Button(text="5",width=2,command=five,borderwidth=3,relief=RIDGE)
+five.grid(row=2,sticky="w",padx=45,pady=5)
+
+four = Button(root,text="4",width=2,command=four,borderwidth=3,relief=RIDGE)
+four.grid(row=2,sticky="w",padx=75,pady=5)
+
+minus = Button(root,text="-",width=2,command=minus,borderwidth=3,relief=RIDGE)
+minus.grid(row=2,sticky="e",padx=125,pady=5)
+
+
+
+three = Button(text="3",width=2,command=three,borderwidth=3,relief=RIDGE)
+three.grid(row=3,sticky="w",padx=15,pady=5)
+
+two = Button(text="2",width=2,command=two,borderwidth=3,relief=RIDGE)
+two.grid(row=3,sticky="w",padx=45,pady=5)
+
+one = Button(root,text="1",width=2,command=one,borderwidth=3,relief=RIDGE)
+one.grid(row=3,sticky="w",padx=75,pady=5)
+
+multiply = Button(root,text="*",width=2,command=mul,borderwidth=3,relief=RIDGE)
+multiply.grid(row=3,sticky="e",padx=125,pady=5)
+
+
+zero = Button(text="0",width=2,command=zero,borderwidth=3,relief=RIDGE)
+zero.grid(row=4,sticky="w",padx=15,pady=5)
+
+double_zero = Button(text="00",width=2,command=double_zero,borderwidth=3,relief=RIDGE)
+double_zero.grid(row=4,sticky="w",padx=45,pady=5)
+
+dot = Button(root,text=".",width=2,command=dot,borderwidth=3,relief=RIDGE)
+dot.grid(row=4,sticky="w",padx=75,pady=5)
+
+divide = Button(root,text="/",width=2,command=divide,borderwidth=3,relief=RIDGE)
+divide.grid(row=4,sticky="e",padx=125,pady=5)
+
+result = Button(root,text="=",width=10,command=result,bg="red",fg="white",borderwidth=3,relief=RIDGE)
+result.grid(row=5,sticky="w",padx=15,pady=5)
+
+modulus = Button(root,text="%",width=2,command=modulus,borderwidth=3,relief=RIDGE)
+modulus.grid(row=5,sticky="e",padx=125,pady=5)
+
+root.mainloop()
