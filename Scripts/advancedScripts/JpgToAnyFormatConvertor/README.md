@@ -1,6 +1,6 @@
-# JPG to PNG Convertor
+# JPG to All Picture Format Convertor
 
-* This script converts the list of JPG images available in source folder to PNG images
+* This script converts the list of JPG images available in source folder to PNG, SVG, and GIF images
 which will get stored in destination folder with help of Pillow module.
 
 * Pillow is a free and open-source additional library for the Python programming language 
