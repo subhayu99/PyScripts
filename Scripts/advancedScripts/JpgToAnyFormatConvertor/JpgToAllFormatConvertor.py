@@ -28,7 +28,7 @@ while choice!=5:
             file = os.path.splitext(filename)[0]  # Splits file name into as tuple as ('filename','.extension')
             img = Image.open(f'{source_folder}/{filename}')
             img.save(f'{destination_folder}/{file}.png','png') #Converts to png format
-            print("Image converted!")
+            print("Image converted to PNG!")
             print()
             
     elif choice==2:
@@ -36,15 +36,15 @@ while choice!=5:
             file = os.path.splitext(filename)[0]  # Splits file name into as tuple as ('filename','.extension')
             img = Image.open(f'{source_folder}/{filename}')
             img.save(f'{destination_folder}/{file}.svg','svg') #Converts to svg format
-            print("Image converted!")
+            print("Image converted to SVG!")
             print()
 
     elif choice==3:
         for filename in os.listdir(source_folder): # For each file present in Source folder
             file = os.path.splitext(filename)[0]  # Splits file name into as tuple as ('filename','.extension')
             img = Image.open(f'{source_folder}/{filename}')
-            img.save(f'{destination_folder}/{file}.png','png') #Converts to png format
-            print("Image converted!")
+            img.save(f'{destination_folder}/{file}.gif','gif') #Converts to gif format
+            print("Image converted to GIF!")
             print()
 
     else:
@@ -56,7 +56,12 @@ Sample input to run in terminal:
 ->Python3 JpgToPngConvertor.py Source_Images Destination_Images
 
 Output:
-Images in Source_Images folder will be converted into Png Images and gets stored in
-Destination_Images folder
+Press 1 -> To conver to PNG
+Press 2 -> To conver to SVG
+Press 3 -> To conver to GIF
+Press 4 -> To Exit
+Enter your Choice: 1
+
+Images converted to PNG!
 '''
 
