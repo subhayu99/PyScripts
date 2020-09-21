@@ -56,9 +56,9 @@ Sample input to run in terminal:
 ->Python3 JpgToPngConvertor.py Source_Images Destination_Images
 
 Output:
-Press 1 -> To conver to PNG
-Press 2 -> To conver to SVG
-Press 3 -> To conver to GIF
+Press 1 -> To convert to PNG
+Press 2 -> To convert to SVG
+Press 3 -> To convert to GIF
 Press 4 -> To Exit
 Enter your Choice: 1
 
