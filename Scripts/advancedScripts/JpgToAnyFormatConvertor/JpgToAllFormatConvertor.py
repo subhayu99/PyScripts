@@ -17,9 +17,9 @@ if not os.path.exists(destination_folder):  #Check if destination folder exists,
 
 choice=1
 while choice!=5:
-    print("Press 1 -> To conver to PNG")
-    print("Press 2 -> To conver to SVG")
-    print("Press 3 -> To conver to GIF")
+    print("Press 1 -> To convert to PNG")
+    print("Press 2 -> To convert to SVG")
+    print("Press 3 -> To convert to GIF")
     print("Press 4 -> To Exit")
     choice=int(input("Enter your Choice: "))
     print()
