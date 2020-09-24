@@ -25,8 +25,8 @@ def ascending():                        #Funtion to sort in Ascending order
                 lst[i], lst[minval] = lst[minval], lst[i]
 
         #Labels for displaying the List and the Order of sorting
-        Label(window,text="Sorted in Ascending Order: ").place(x=20,y=170)
-        Label(window,text=lst).place(x=190,y=170)
+        Label(window,text="Sorted in Ascending Order: ",fg="white",bg="black").place(x=20,y=170)
+        Label(window,text=lst,fg="white",bg="black").place(x=190,y=170)
         
 
 def descending():                       #Funtion to sort in Descending order
@@ -42,8 +42,8 @@ def descending():                       #Funtion to sort in Descending order
                 lst[i], lst[maxval] = lst[maxval], lst[i]
 
         #Labels for displaying the List and the Order of sorting
-        Label(window,text="Sorted in Descending Order: ").place(x=20,y=170)
-        Label(window,text=lst).place(x=190,y=170)
+        Label(window,text="Sorted in Descending Order: ",fg="white",bg="black").place(x=20,y=170)
+        Label(window,text=lst,fg="white",bg="black").place(x=190,y=170)
 
 
 #GUI Labels and Buttons--------------------------------------------------------------------
