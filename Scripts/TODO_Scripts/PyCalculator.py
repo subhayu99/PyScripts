@@ -31,13 +31,13 @@ def tannum(num1):
 #Function to take one input 
 def one_input():
     num = int(input("Enter first number: "))
-	return num
+    return num
 
 #Function to take two input 
 def two_input():
     num_1 = int(input("Enter first number: ")) 
     num_2 = int(input("Enter second number: "))
-	return num_1,num_2
+    return num_1,num_2
 
 print("Please select operation -\n"\
         "1. Add\n"\
@@ -69,15 +69,15 @@ elif select == 4:
 
  elif select == 5:
     number_1=one_input  ()
-    print("\nsin of ", number_1,"=",sinnum(number_1))
+    print("\nSin of ", number_1,"=",sinnum(number_1))
 
  elif select == 6:
     number_1=one_input()  
-    print("\ncos of ", number_1,"=",cosnum(number_1))
+    print("\nCos of ", number_1,"=",cosnum(number_1))
 
  elif select == 7:
     number_1=one_input()  
-    print("\ntan of ", number_1,"=",tannum(number_1))
+    print("\nTan of ", number_1,"=",tannum(number_1))
 
 else: 
     print("\nInvalid input")
