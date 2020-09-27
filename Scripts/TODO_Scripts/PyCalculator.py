@@ -46,25 +46,16 @@ elif select == 4:
     print("\n", number_1, "/", number_2, "=", divide(number_1, number_2))
 
 elif select == 5:
-    ch=int(input("Choose the number: "))
-    if (ch==1):
-        print("\nSin of ", number_1, "=", math.sin(number_1))
-    else:
-        print("\nSin of ", number_2, "=", math.sin(number_2))
+    number_1 = oneinput()
+    print("\nsin of ", number_1, "_", math.sin(number_1))
 
 elif select == 6:
-    ch=int(input("Choose the number: "))
-    if (ch==1):
-        print("\nCos of ", number_1, "=", math.cos(number_1))
-    else:
-        print("\nCos of ", number_2, "=", math.cos(number_2))
+    number_1 = oneinput()
+    print("\ncos of ", number_1, "_", math.cos(number_1))
 
 elif select == 7:
-    ch=int(input("Choose the number: "))
-    if (ch==1):
-        print("\nTan of ", number_1,"=", math.tan(number_1))
-    else:
-        print("\nTan of ", number_2,"=", math.tan(number_2))
+    number_1 = oneinput()
+    print("\ntan of ", number_1, "_", math.tan(number_1))
 
 else: 
     print("\nInvalid input")
