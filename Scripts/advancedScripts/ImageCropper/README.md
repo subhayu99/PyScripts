@@ -12,9 +12,10 @@ the output is also an image, whereas in computer vision the output can be some f
 ## Installation
 
 ### Windows
-
- $ pip install opencv-python
+   $ pip install opencv-python
+   
 ### MacOS
    $ brew install opencv3 --with-contrib --with-python3
+   
 ### Linux
    $ sudo apt-get install libopencv-dev python-opencv
