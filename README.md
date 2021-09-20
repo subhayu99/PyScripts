@@ -68,7 +68,7 @@ All *Contributions* of the *Contributors* can be found in the __[Contributions](
               <img src="https://avatars.githubusercontent.com/u/74645302?v=4" width="100px;" alt="prathimacode-hub"/><br />
               <sub>
                   <b>
-                      <strong>Yash Shete</strong>
+                      <strong>Prathima Kadari</strong>
                   </b>
               </sub>
           </a>
