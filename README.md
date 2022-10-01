@@ -18,7 +18,7 @@ This project is for newbies and rookies; who are new to the idea of Open Source 
 
 
 ## ⚡ Contributors
-All *Contributions* of the *Contributors* can be found in the __[Contributions](https://github.com/subhayu99/PyScripts/graphs/contributors)__ section and all details about *Contributors* can be found in [__Contributors.md__](https://github.com/subhayu99/PyScripts/blob/master/Contributors.md) file.
+*Contributions* for all the *contributors* can be found in the __[Contributions](https://github.com/subhayu99/PyScripts/graphs/contributors)__ section and all details about *Contributors* can be found in [__Contributors.md__](https://github.com/subhayu99/PyScripts/blob/master/Contributors.md) file.
 
 </br>
 <table>
